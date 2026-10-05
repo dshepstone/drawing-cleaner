@@ -10,8 +10,9 @@ program).
 
 ### Get it
 
-1. Open the [Releases page](../../releases/latest) and download **DrawingCleaner.exe**.
-2. Double-click it. There is nothing to install.
+1. Open the [Releases page](../../releases/latest) and download **DrawingCleaner-Windows.zip**.
+2. Right-click the zip and choose **Extract All...**
+3. Open the extracted folder and double-click **DrawingCleaner.exe**. There is nothing to install.
 
 The first time, Windows may show a blue "Windows protected your PC" box
 because the app is new and unsigned. Click **More info**, then **Run anyway**.
@@ -76,8 +77,9 @@ Tests: `pip install pytest` then `python -m pytest tests`.
 1. Change `__version__` in `drawing_cleaner/__init__.py`.
 2. Tag and push: `git tag v1.0.1 && git push --tags`.
 
-GitHub Actions runs the tests, builds `DrawingCleaner.exe` on Windows and
-attaches it to a new release. Students always download from the same
+GitHub Actions runs the tests, builds `DrawingCleaner.exe` on Windows, zips it
+with a short instruction sheet and attaches `DrawingCleaner-Windows.zip` to a
+new release. Students always download from the same
 Releases link.
 
 ### How it is organised
@@ -87,7 +89,8 @@ Releases link.
 | `drawing_cleaner/engine.py` | The cleaning method. No window code. |
 | `drawing_cleaner/app.py` | The window (Tkinter). |
 | `drawing_cleaner/cli.py` | Command-line use. |
-| `.github/workflows/build.yml` | Tests and builds the Windows app. |
+| `.github/workflows/build.yml` | Tests, builds and zips the Windows app. |
+| `packaging/READ ME FIRST.txt` | The instruction sheet that goes in the zip. |
 | `docs/PLAN.md` | Design decisions and what could come next. |
 
 ## Licence

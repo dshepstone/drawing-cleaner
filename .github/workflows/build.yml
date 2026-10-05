@@ -29,14 +29,21 @@ jobs:
           --icon assets/icon.ico
           --add-data "assets;assets"
           DrawingCleaner.py
-      - name: Keep the .exe from this run
+      - name: Package the download as a zip
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force package/DrawingCleaner | Out-Null
+          Copy-Item dist/DrawingCleaner.exe package/DrawingCleaner/
+          Copy-Item "packaging/READ ME FIRST.txt" package/DrawingCleaner/
+          Compress-Archive -Path package/DrawingCleaner -DestinationPath DrawingCleaner-Windows.zip -Force
+      - name: Keep the zip from this run
         uses: actions/upload-artifact@v4
         with:
-          name: DrawingCleaner-windows
-          path: dist/DrawingCleaner.exe
-      - name: Attach the .exe to the release
+          name: DrawingCleaner-Windows
+          path: package/DrawingCleaner
+      - name: Attach the zip to the release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/DrawingCleaner.exe
+          files: DrawingCleaner-Windows.zip
           generate_release_notes: true

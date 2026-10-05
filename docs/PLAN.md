@@ -10,7 +10,7 @@ They should not need Python, a terminal, or Photoshop.
 
 | Decision | Why |
 |---|---|
-| One `.exe`, no installer | Works from Downloads or a USB stick; nothing needs admin rights. |
+| One `.exe` in a zip, no installer | Works from Downloads or a USB stick; nothing needs admin rights. Browsers block a zip less often than a bare `.exe`. |
 | Built by GitHub Actions on a version tag | Nobody builds by hand; the Releases page is the one link to hand out. |
 | Tkinter window | Ships with Python, so the app stays small and has few parts to break. |
 | Three numbered steps on one screen | A student can finish without reading instructions. |

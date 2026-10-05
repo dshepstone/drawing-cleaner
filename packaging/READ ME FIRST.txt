@@ -1,0 +1,25 @@
+DRAWING CLEANER
+Pencil drawings to clean lines on a transparent background.
+
+TO START
+  1. Right-click the zip you downloaded and choose "Extract All...".
+  2. Open the extracted folder and double-click DrawingCleaner.exe.
+
+IF WINDOWS SHOWS A BLUE "Windows protected your PC" BOX
+  This appears because the app is new, not because anything is wrong.
+  Click "More info", then click "Run anyway".
+
+TO USE
+  1. Choose folder...   Pick the folder that holds your drawings (PNG or JPG).
+  2. Adjust if needed   Raise "Paper cleanup" if grey haze is left behind.
+                        Raise "Line darkness" if your lines look too faint.
+                        Hold Space to compare with the original.
+  3. Click the blue button.
+
+  The cleaned drawings are saved in a new folder beside yours with "_clean"
+  added to its name. Your original drawings are never changed.
+
+TO LOAD INTO OPENTOONZ
+  Level > Load Level..., go to the "_clean" folder and pick the sequence.
+
+Full instructions: https://github.com/dshepstone/drawing-cleaner
